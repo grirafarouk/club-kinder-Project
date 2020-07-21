@@ -3,15 +3,11 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListerComponent } from './produits/lister/lister.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProduitComponent } from './produit/produit.component';
-import { CommandeComponent } from './commande/commande.component';
-import { UserComponent } from './user/user.component';
-import { ListecommandeComponent } from './listecommande/listecommande.component';
-import { ListeuserComponent } from './listeuser/listeuser.component';
-import { ListeproduitComponent } from './listeproduit/listeproduit.component';
+import { ownerComponent } from './owner/owner.component';
+import { kinderComponent } from './kinder/kinder.component';
+import { clubComponent } from './club/club.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { TabsModule } from 'ngx-bootstrap/tabs';
@@ -22,6 +18,7 @@ import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
 import { CookieService } from 'ngx-cookie-service';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 const notifierDefaultOptions: NotifierOptions = {
   position: {
@@ -68,17 +65,15 @@ const notifierDefaultOptions: NotifierOptions = {
 @NgModule({
   declarations: [
     AppComponent,
-    ListerComponent,
     LoginComponent,
     DashboardComponent,
-    ProduitComponent,
-    CommandeComponent,
-    UserComponent,
-    ListecommandeComponent,
-    ListeuserComponent,
-    ListeproduitComponent,
+    ownerComponent,
+    kinderComponent,
+    clubComponent,
+  
   ],
   imports: [
+    HttpModule,
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,

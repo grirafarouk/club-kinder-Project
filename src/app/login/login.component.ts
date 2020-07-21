@@ -22,8 +22,19 @@ export class LoginComponent implements OnInit {
   loginform: FormGroup
   constructor(private users: UserService, private notifier: NotifierService, private cookie: CookieService, private router: Router, private fb: FormBuilder, private yourservice: YourService, private appservice: AppService) { }
 
-  ngOnInit() {
-
+  ngOnInit()
+  
+  
+  
+  {
+    this.users.getAll().subscribe(data=>{console.log(JSON.parse(data._body).clubs)
+    })
+    
+    this.users.getAl2l().then(data=>{
+  console.log(data)
+  
+  });
+this.users.getAll().subscribe(t=>console.log(t))
     this.loginform = this.fb.group({
       name: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
       pass: ['', Validators.compose([Validators.required, Validators.minLength(3)])]
@@ -38,7 +49,7 @@ export class LoginComponent implements OnInit {
      let profil:string="";
 
 
-        if (( this.credential.name=="farouk") && (this.credential.pass=="123")) {
+        if (( this.credential.name=="saif") && (this.credential.pass=="123")) {
           verifiedpassuser = true;
         }
 

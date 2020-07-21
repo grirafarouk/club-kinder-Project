@@ -1,5 +1,5 @@
 <div class="card-header">
-    <label style="font-weight:bold;color:#546E7A;">Produit</label>
+    <label style="font-weight:bold;color:#546E7A;">Owner</label>
 </div>
 
 <div class="card-body">
@@ -9,28 +9,25 @@
             <thead class="thead-light">
                 <tr>
                     <td>
-                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-center"><b>designation</b></h6>
+                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-center"><b>firstName</b></h6>
                     </td>
                     <td>
-                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-center"><b>prix</b></h6>
+                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-center"><b>lastName</b></h6>
                     </td>
                     <td>
-                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-right"><b>qte</b></h6>
+                        <h6 style="color:rgba(3, 3, 3, 0.918);" class="text-right"><b>email</b></h6>
                     </td>
 
 
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let produit of listproduit  | paginate: { itemsPerPage:10, currentPage: pt, id: 'pt' }">
-                    <td class="text-center">{{produit.designation}}</td>
-                    <td class="text-center">{{produit.prix}}</td>
-                    <td class="text-right">{{produit.qte}}</td>
+                <tr *ngFor="let owner of listowner  | paginate: { itemsPerPage:4, currentPage: pt, id: 'pt' }">
+                    <td class="text-center">{{owner.firstName}}</td>
+                    <td class="text-center">{{owner.lastName}}</td>
+                    <td class="text-right">{{owner.email}}</td>
 
-                    <td align="center"><button class='btn btn-outline-success btn-sm' (click)="showEditModal(produit)">
-            <i class="fa fa-edit" aria-hidden="true"></i>Editer</button><button style="margin:10px;" class='btn btn-outline-danger btn-sm' (click)="showDeleteModal(produit)">
-            <i class="fa fa-trash" aria-hidden="true"></i>Supprimer
-          </button>
+                    <td align="center">
 
                     </td>
 
@@ -51,40 +48,46 @@
 
 
 
-<div bsModal #produitModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div bsModal #ownerModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dark  modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">produit</h4>
-                <button type="button" class="close" (click)="produitModal.hide()" aria-label="Close">
+                <h4 class="modal-title">owner</h4>
+                <button type="button" class="close" (click)="ownerModal.hide()" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
             </div>
             <div class="modal-body" style="padding: 52px">
                 <form class="form-horizontal">
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">designation:</label>
+                        <label class="col-md-3 col-form-label" for="text-input">firstName</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="produite.designation" [ngModelOptions]="{standalone: true}" />
+                            <input type="text" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="ownere.first_name" [ngModelOptions]="{standalone: true}" />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">prix:</label>
+                        <label class="col-md-3 col-form-label" for="text-input">lastName</label>
                         <div class="col-md-8">
-                            <input type="number" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="produite.prix" [ngModelOptions]="{standalone: true}" />
+                            <input type="text" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="ownere.last_name" [ngModelOptions]="{standalone: true}" />
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-3 col-form-label" for="text-input">qte:</label>
+                        <label class="col-md-3 col-form-label" for="text-input">email</label>
                         <div class="col-md-8">
-                            <input type="number" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="produite.qte" [ngModelOptions]="{standalone: true}">
+                            <input type="text" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="ownere.email" [ngModelOptions]="{standalone: true}" />
+                        </div></div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label" for="text-input">password</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" style="font-weight: bold;color: black;" [(ngModel)]="ownere.password" [ngModelOptions]="{standalone: true}" />
+                            </div>
                         </div>
-                    </div>
+                    
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" style="background-color:red" class="btn btn-primary" (click)="produitModal.hide()">Annuler</button>
-                <button type="button" style="background-color:green" (click)="saveproduit()" class="btn btn-primary">Valider</button>
+                <button type="button" style="background-color:red" class="btn btn-primary" (click)="ownerModal.hide()">Annuler</button>
+                <button type="button" style="background-color:green" (click)="saveowner()" class="btn btn-primary">Valider</button>
             </div>
         </div>
     </div>

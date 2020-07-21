@@ -1,13 +1,11 @@
-import { ListeproduitComponent } from './listeproduit/listeproduit.component';
-import { ListeuserComponent } from './listeuser/listeuser.component';
-import { ProduitComponent } from './produit/produit.component';
+
+import { ownerComponent } from './owner/owner.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UserComponent } from './user/user.component';
-import { CommandeComponent } from './commande/commande.component';
-import { ListecommandeComponent } from './listecommande/listecommande.component';
+import { clubComponent } from './club/club.component';
+import { kinderComponent } from './kinder/kinder.component';
 
 
 export const routes: Routes = [
@@ -27,33 +25,19 @@ export const routes: Routes = [
     children: [
       {
         path: 'user',
-        component:UserComponent
+        component:clubComponent
       },
       { 
-        path: 'commande',
-        component:CommandeComponent
+        path: 'kinder',
+        component:kinderComponent
 
       },
       {
-        path: 'produit',
-        component:ProduitComponent
+        path: 'owner',
+        component:ownerComponent
 
       },
-      {
-        path: 'listeuser',
-        component:ListeuserComponent
-      },
-      { 
-        path: 'listecommande',
-        component:ListecommandeComponent
-
-      },
-      {
-        path: 'listeproduit',
-        component:ListeproduitComponent
-
-      },
-      
+   
     ]
   },
 ];

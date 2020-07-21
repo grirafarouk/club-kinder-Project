@@ -1,6 +1,7 @@
-export class produit
-{
-    public  id:String;
+
+export class owner {
+
+  public  id:String;
 	
     public	 first_name:String;
         
@@ -10,4 +11,4 @@ export class produit
         
     public	 password:String;
         public createdAt:any[];
-    }
+}

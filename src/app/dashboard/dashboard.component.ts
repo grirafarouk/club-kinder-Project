@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { AppService } from '../app.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +11,10 @@ import { AppService } from '../app.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor( private cokie:CookieService ,private  router:Router,private appservice:AppService) { }
+  constructor(private userservice:UserService, private cokie:CookieService ,private  router:Router,private appservice:AppService) { }
 
   ngOnInit(): void {
+    this.userservice.getAll().subscribe(data=>{console.log(data)})
     if(this.cokie.get('name').length >0){
           this.router.navigateByUrl("/dashboard")
           

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CommandeService } from './commande.service';
+import { ClubService } from './club.service';
 
-describe('CommandeService', () => {
+describe('ClubService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CommandeService = TestBed.get(CommandeService);
+    const service: ClubService = TestBed.get(ClubService);
     expect(service).toBeTruthy();
   });
 });

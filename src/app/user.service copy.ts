@@ -1,4 +1,4 @@
-import { user } from './models/user';
+import { owner } from './models/owner';
 import { environment } from './../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
